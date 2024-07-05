@@ -1,6 +1,22 @@
-Rest client utility to make the rest call
+# gorestclient
 
-Usage:
+[![Go Reference](https://pkg.go.dev/badge/github.com/aafak/gorestclient.svg)](https://pkg.go.dev/github.com/aafak/gorestclient)
+
+A Go client library for interacting with RESTful APIs.
+
+## Features
+
+- Easy to use
+- Supports JSON
+
+## Installation
+
+```sh
+go get -u github.com/aafak/gorestclient
+```
+
+# Usage:
+
 ```
 package main
 

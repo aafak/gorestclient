@@ -1,4 +1,4 @@
-package main
+package gorestclient
 
 import (
 	"bytes"
@@ -49,15 +49,15 @@ func (r *RestClient) BuilRequest(method, url string, body ...string) (*http.Requ
 	}
 }
 
-func main() {
-	// restClient := NewRestClient()
-	// req, _ := restClient.BuilRequest("GET", "https://jsonplaceholder.typicode.com/posts")
-	// resp, err := restClient.ExecuteRequest(req)
-	// if err != nil {
-	// 	panic(err)
-	// }
-	// defer resp.Body.Close()
-	// fmt.Println(resp.Status)
-	// fmt.Println(resp.StatusCode)
+// func main() {
+// 	restClient := NewRestClient()
+// 	req, _ := restClient.BuilRequest("GET", "https://jsonplaceholder.typicode.com/posts")
+// 	resp, err := restClient.ExecuteRequest(req)
+// 	if err != nil {
+// 		panic(err)
+// 	}
+// 	defer resp.Body.Close()
+// 	fmt.Println(resp.Status)
+// 	fmt.Println(resp.StatusCode)
 
-}
+// }

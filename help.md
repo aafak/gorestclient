@@ -40,3 +40,18 @@ To github.com:aafak/gorestclient.git
  * [new tag]         v1.0.0 -> v1.0.0
 
 ASIAPACIFIC+aafakmoh@HPE-5CG3360726 MINGW64 ~/OneDrive - Hewlett Packard Enterprise/github-repos/personel/gorestclient (main)
+
+
+TO update existing code, again create new tag and push
+
+ASIAPACIFIC+aafakmoh@HPE-5CG3360726 MINGW64 ~/OneDrive - Hewlett Packard Enterprise/github-repos/personel/gorestclient (main)
+$ git tag v1.0.1
+
+ASIAPACIFIC+aafakmoh@HPE-5CG3360726 MINGW64 ~/OneDrive - Hewlett Packard Enterprise/github-repos/personel/gorestclient (main)
+$ git push origin v1.0.1
+Total 0 (delta 0), reused 0 (delta 0), pack-reused 0
+To github.com:aafak/gorestclient.git
+ * [new tag]         v1.0.1 -> v1.0.1
+
+ASIAPACIFIC+aafakmoh@HPE-5CG3360726 MINGW64 ~/OneDrive - Hewlett Packard Enterprise/github-repos/personel/gorestclient (main)
+$

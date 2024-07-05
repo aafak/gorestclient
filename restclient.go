@@ -8,7 +8,7 @@ import (
 
 type RestClientInterface interface {
 	ExecuteRequest(req *http.Request) (*http.Response, error)
-	BuilRequest(method, url string, body ...string) (*http.Request, error)
+	BuildRequest(method, url string, body ...string) (*http.Request, error)
 }
 
 type RestClient struct {
@@ -31,7 +31,7 @@ func (rc *RestClient) ExecuteRequest(req *http.Request) (*http.Response, error) 
 	return resp, nil
 }
 
-func (r *RestClient) BuilRequest(method, url string, body ...string) (*http.Request, error) {
+func (r *RestClient) BuildRequest(method, url string, body ...string) (*http.Request, error) {
 
 	if len(body) > 0 && body[0] != "" {
 		reqbodyPayload := bytes.NewBuffer([]byte(body[0]))

@@ -14,7 +14,7 @@ func TestNewRestClient(t *testing.T) {
 
 func TestExecuteReq(t *testing.T) {
 	restClient := NewRestClient()
-	req, _ := restClient.BuilRequest("GET", "https://jsonplaceholder.typicode.com/posts")
+	req, _ := restClient.BuildRequest("GET", "https://jsonplaceholder.typicode.com/posts")
 	resp, err := restClient.ExecuteRequest(req)
 	if err != nil {
 		t.Errorf("ExecuteRequest() error = %v; want nil", err)
@@ -26,7 +26,7 @@ func TestExecuteReq(t *testing.T) {
 
 func TestExecutePostReq(t *testing.T) {
 	restClient := NewRestClient()
-	req, _ := restClient.BuilRequest("POST", "https://jsonplaceholder.typicode.com/posts", `{"title": "foo","body": "bar","userId": 1}`)
+	req, _ := restClient.BuildRequest("POST", "https://jsonplaceholder.typicode.com/posts", `{"title": "foo","body": "bar","userId": 1}`)
 	resp, err := restClient.ExecuteRequest(req)
 	fmt.Println(resp)
 	if err != nil {

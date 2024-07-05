@@ -42,7 +42,47 @@ To github.com:aafak/gorestclient.git
 ASIAPACIFIC+aafakmoh@HPE-5CG3360726 MINGW64 ~/OneDrive - Hewlett Packard Enterprise/github-repos/personel/gorestclient (main)
 
 
-TO update existing code, again create new tag and push
+****************To update existing code, again create new tag and push
+
+ASIAPACIFIC+aafakmoh@HPE-5CG3360726 MINGW64 ~/OneDrive - Hewlett Packard Enterprise/github-repos/personel/gorestclient (main)
+$ git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes not staged for commit:
+  (use "git add/rm <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   help.md
+        deleted:    main.go
+        deleted:    main_test.go
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        restclient.go
+        restclient_test.go
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+ASIAPACIFIC+aafakmoh@HPE-5CG3360726 MINGW64 ~/OneDrive - Hewlett Packard Enterprise/github-repos/personel/gorestclient (main)
+$ git add .
+
+ASIAPACIFIC+aafakmoh@HPE-5CG3360726 MINGW64 ~/OneDrive - Hewlett Packard Enterprise/github-repos/personel/gorestclient (main)
+$ git commit -a -m "Updated the pcakage details"
+[main ad139ed] Updated the pcakage details
+ 3 files changed, 50 insertions(+), 15 deletions(-)
+ rename main.go => restclient.go (77%)
+ rename main_test.go => restclient_test.go (97%)
+
+ASIAPACIFIC+aafakmoh@HPE-5CG3360726 MINGW64 ~/OneDrive - Hewlett Packard Enterprise/github-repos/personel/gorestclient (main)
+$ git push origin main
+Enumerating objects: 7, done.
+Counting objects: 100% (7/7), done.
+Delta compression using up to 12 threads
+Compressing objects: 100% (5/5), done.
+Writing objects: 100% (5/5), 1.83 KiB | 1.83 MiB/s, done.
+Total 5 (delta 0), reused 0 (delta 0), pack-reused 0
+To github.com:aafak/gorestclient.git
+   7192a92..ad139ed  main -> main
 
 ASIAPACIFIC+aafakmoh@HPE-5CG3360726 MINGW64 ~/OneDrive - Hewlett Packard Enterprise/github-repos/personel/gorestclient (main)
 $ git tag v1.0.1

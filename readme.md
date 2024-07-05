@@ -46,3 +46,9 @@ POST request:
 	resp, err := restClient.ExecuteRequest(req)
 	fmt.Println(resp)
 ```
+
+# Restclient with SSL certificates
+```
+	restClient, _ := NewRestClientWithCerts("cert.pem", "privkey.pem")
+
+```

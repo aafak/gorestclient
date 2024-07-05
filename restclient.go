@@ -2,8 +2,10 @@ package gorestclient
 
 import (
 	"bytes"
+	"crypto/tls"
 	"fmt"
 	"net/http"
+	"os"
 )
 
 type RestClientInterface interface {
@@ -16,9 +18,47 @@ type RestClient struct {
 }
 
 func NewRestClient() RestClientInterface {
-	return &RestClient{
-		Client: &http.Client{},
+	tr := &http.Transport{
+		TLSClientConfig: &tls.Config{InsecureSkipVerify: true}, //nolint:gosec
 	}
+	client := &http.Client{Transport: tr}
+	return &RestClient{
+		Client: client,
+	}
+}
+
+func NewRestClientWithCerts(certFilePath, privateKeyFilePath string) (RestClientInterface, error) {
+	pubCert, err := os.ReadFile(certFilePath)
+	if err != nil {
+		fmt.Printf("reading cert file failed with error: %s", err.Error())
+		return nil, err
+	}
+
+	privKey, err := os.ReadFile(privateKeyFilePath)
+	if err != nil {
+		fmt.Printf("reading private key file failed with error: %s", err.Error())
+		return nil, err
+	}
+
+	cert, err := tls.X509KeyPair(pubCert, privKey)
+	if err != nil {
+		fmt.Printf("falied to load certificate pair error: %s", err.Error())
+		return nil, err
+	}
+
+	tr := &http.Transport{
+		TLSClientConfig: &tls.Config{
+			MinVersion:   tls.VersionTLS12,
+			Certificates: []tls.Certificate{cert},
+		},
+	}
+
+	client := &http.Client{Transport: tr}
+	// client := &http.Client{Transport: tr, Timeout: timeout}
+	restClient := &RestClient{
+		Client: client,
+	}
+	return restClient, nil
 }
 
 func (rc *RestClient) ExecuteRequest(req *http.Request) (*http.Response, error) {

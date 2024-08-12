@@ -62,7 +62,7 @@ func NewRestClientWithCerts(certFilePath, privateKeyFilePath string) (RestClient
 }
 
 func (rc *RestClient) ExecuteRequest(req *http.Request) (*http.Response, error) {
-	fmt.Printf("Executing %s request %s\n", req.Method, req.URL)
+	fmt.Printf("@@@@@@@@@Executing %s request %s\n", req.Method, req.URL)
 	resp, err := rc.Client.Do(req)
 	if err != nil {
 		fmt.Printf("%s request %s failed, response:%v\n", req.Method, req.URL, resp)
